@@ -1,11 +1,11 @@
 # Document to Markdown Converter
 
-## 简介
+## Introduction
 
-本项目基于 [markitdown](https://github.com/microsoft/markitdown/) 库，实现将 Office 文档（如 .docx）转换为 Markdown 文件的功能。
-项目提供一套 Python 脚本和对应的 Shell 脚本，方便在本地快速运行转换流程。
+This project is based on the [markitdown](https://github.com/microsoft/markitdown/) library, implementing functionality to convert Office documents (such as .docx) to Markdown files.
+The project provides a set of Python scripts and corresponding Shell scripts for convenient local execution of the conversion process.
 
-## 目录结构
+## Directory Structure
 
 ```
 project_root/
@@ -20,54 +20,54 @@ project_root/
    └─ activate_env.sh
 ```
 
-- `install_env.sh`：通过 conda 创建并安装所需环境和依赖的脚本。
-- `requirements.txt`：Python 依赖清单，包括 markitdown 等第三方库。
-- `python/converter.py`：核心转换逻辑脚本，使用 markitdown 将 Office 文档转为 Markdown。
-- `scripts/run_convert.sh`：执行 shell 脚本，用于激活环境并调用 `converter.py`。
-- `scripts/activate_env.sh`：激活 conda 虚拟环境的辅助脚本。
+- `install_env.sh`: Script to create and install required environment and dependencies through conda.
+- `requirements.txt`: Python dependency list, including third-party libraries like markitdown.
+- `python/converter.py`: Core conversion logic script, using markitdown to convert Office documents to Markdown.
+- `scripts/run_convert.sh`: Shell script for activating the environment and calling `converter.py`.
+- `scripts/activate_env.sh`: Helper script for activating the conda virtual environment.
 
-## 环境准备
+## Environment Setup
 
-1. 确保已安装 [conda](https://docs.conda.io/en/latest/)。
-2. 在项目根目录下运行：
+1. Ensure [conda](https://docs.conda.io/en/latest/) is installed.
+2. Run in the project root directory:
    ```bash
    chmod +x install_env.sh
    ./install_env.sh
    ```
-   脚本将创建并激活 conda 环境，然后安装 `requirements.txt` 中的依赖。
+   The script will create and activate the conda environment, then install dependencies from `requirements.txt`.
 
-## 使用方法
+## Usage
 
-1. 准备输入文件（如：`input.docx`）。
-2. 执行脚本：
+1. Prepare input file (e.g., `input.docx`).
+2. Execute script:
    ```bash
    ./scripts/run_convert.sh input.docx output.md
    ```
-   - 脚本将会自动激活对应的 conda 环境，并调用 `converter.py` 完成转换。
-   - 执行完成后，`output.md` 即为转换结果。
+   - The script will automatically activate the corresponding conda environment and call `converter.py` to complete the conversion.
+   - After execution, `output.md` will be the conversion result.
 
-## 流程图
+## Flow Chart
 
 ```mermaid
 flowchart TD
 
-A[用户运行 run_convert.sh] --> B[run_convert.sh 脚本启动]
-B --> C[激活 conda 环境]
-C --> D[解析用户输入参数(输入文件, 输出文件)]
-D --> E[调用 converter.py 并传参]
-E --> F[converter.py 使用 markitdown 转换文档]
-F --> G[输出 Markdown 文件]
-G --> H[完成并返回结果]
+A[User runs run_convert.sh] --> B[run_convert.sh script starts]
+B --> C[Activate conda environment]
+C --> D[Parse user input parameters (input file, output file)]
+D --> E[Call converter.py with parameters]
+E --> F[converter.py uses markitdown to convert document]
+F --> G[Output Markdown file]
+G --> H[Complete and return result]
 ```
 
-## 常见问题
+## Common Issues
 
-- **Q:** 如果没装 conda 怎么办？
-  **A:** 请参考 [conda 官方文档](https://docs.conda.io/en/latest/) 安装 conda 后再执行 `install_env.sh`。
+- **Q:** What if conda is not installed?
+  **A:** Please refer to the [conda official documentation](https://docs.conda.io/en/latest/) to install conda before running `install_env.sh`.
 
-- **Q:** 如何添加新的依赖？
-  **A:** 修改 `requirements.txt` 后重新执行 `install_env.sh` 更新环境。
+- **Q:** How to add new dependencies?
+  **A:** Modify `requirements.txt` and re-run `install_env.sh` to update the environment.
 
-## 参考资料
+## References
 
-- [markitdown 项目地址](https://github.com/microsoft/markitdown/)
+- [markitdown project repository](https://github.com/microsoft/markitdown/)
