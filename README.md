@@ -49,15 +49,14 @@ project_root/
 ## Flow Chart
 
 ```mermaid
-flowchart TD
-
-A[User runs run_convert.sh] --> B[run_convert.sh script starts]
-B --> C[Activate conda environment]
-C --> D[Parse user input parameters (input file, output file)]
-D --> E[Call converter.py with parameters]
-E --> F[converter.py uses markitdown to convert document]
-F --> G[Output Markdown file]
-G --> H[Complete and return result]
+graph TD
+    A("User runs run_convert.sh") --> B("run_convert.sh script starts")
+    B --> C("Activate conda environment")
+    C --> D("Parse user input parameters (input file, output file)")
+    D --> E("Call converter.py with parameters")
+    E --> F("converter.py uses markitdown to convert document")
+    F --> G("Output Markdown file")
+    G --> H("Complete and return result")
 ```
 
 ## Common Issues
