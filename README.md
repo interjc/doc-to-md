@@ -62,10 +62,10 @@ graph TD
 ## Common Issues
 
 - **Q:** What if conda is not installed?
-  **A:** Please refer to the [conda official documentation](https://docs.conda.io/en/latest/) to install conda before running `install_env.sh`.
+- **A:** Please refer to the [conda official documentation](https://docs.conda.io/en/latest/) to install conda before running `install_env.sh`.
 
 - **Q:** How to add new dependencies?
-  **A:** Modify `requirements.txt` and re-run `install_env.sh` to update the environment.
+- **A:** Modify `requirements.txt` and re-run `install_env.sh` to update the environment.
 
 ## References
 
